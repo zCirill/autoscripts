@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s https://yobit.net/api/3/ticker/btc_usd | jq '.[] | .avg'
