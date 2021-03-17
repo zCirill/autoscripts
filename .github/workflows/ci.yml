@@ -17,4 +17,8 @@ jobs:
           cd JetsBe
           git pull
           mvn -B clean package -DskipTests
-          java -jar target/JetsBe-0.0.1-SNAPSHOT.war
+          sudo systemctl stop tomcat.service
+          sudo rm -rf /opt/tomcat/webapps/jetsbe*
+          sudo cp /home/deploy/JetsBe/target/JetsBe-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/jetsbe.war
+          sudo chown tomcat. /opt/tomcat/webapps/jetsbe.war
+          sudo systemctl start tomcat.service
