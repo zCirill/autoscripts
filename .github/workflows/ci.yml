@@ -18,3 +18,5 @@ jobs:
           git pull
           echo BOO
           ls -al
+          mvn -B clean package -DskipTests
+          java -jar target/JetsBe-0.0.1-SNAPSHOT.war
